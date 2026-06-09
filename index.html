@@ -1,89 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Dita Sayang ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#091524;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('foto1.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+font-size:1rem;
+font-weight:bold;
+}
+
+.open-btn{
+margin-top:25px;
+background:#d4af37;
+color:#071426;
+}
+
+section{
+padding:80px 20px;
+display:none;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.card{
+background:#10233f;
+padding:30px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+}
+
+.date-box{
+background:#10233f;
+padding:40px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#yesBtn{
+background:#d4af37;
+color:#071426;
+margin-right:10px;
+}
+
+#noBtn{
+background:#ff4d6d;
+color:white;
+position:relative;
+}
+
+.final{
+font-size:1.2rem;
+line-height:2;
+}
+
+.heart{
+position:fixed;
+font-size:24px;
+animation:fall 4s linear infinite;
+pointer-events:none;
+z-index:9999;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<div>
+
+<h1>Untuk Dita Sayang ❤️</h1>
+
+<p>
+Aku punya sesuatu yang ingin kusampaikan...
+</p>
+
+<button class="open-btn" onclick="openStory()">
+Buka Rahasia 💌
+</button>
+
+</div>
+
+</div>
+
+<section id="content">
+
+<div class="container">
+
+<h2>Hai Dita Sayang 🌹</h2>
+
+<div class="card">
+
+<p>
+Terima kasih sudah menjadi bagian terindah dalam hidupku.
+Ada banyak hari yang telah kita lalui bersama,
+dan aku berharap masih ada banyak hari indah yang akan kita ciptakan.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Kenangan Kita 📸</h2>
+
+<div class="gallery">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+
+</div>
+
+</div>
+
+<div class="date-box">
+
+<h2>Ajakan Spesial ❤️</h2>
+
+<br>
+
+<p>
+Aku ingin mengajakmu menghabiskan waktu bersamaku.
+Karena setiap momen bersamamu selalu terasa istimewa.
+</p>
+
+<br><br>
+
+<h3>📅 Kamis</h3>
+<h3>⏰ 09.00 WIB</h3>
+<h3>📍 Tempat Masih Rahasia 😘</h3>
+
+<br><br>
+
+<p>
+Maukah kamu pergi kencan denganku?
+</p>
+
+<br>
+
+<button id="yesBtn" onclick="acceptDate()">
+❤️ Ya, Aku Mau
+</button>
+
+<button id="noBtn">
+😅 Tidak
+</button>
+
+</div>
+
+<div id="result"></div>
+
+</div>
+
+</section>
+
 <script>
 
 function openStory(){
-    document.getElementById('content').style.display='block';
-    document.getElementById('content').scrollIntoView({
-        behavior:'smooth'
-    });
+
+document.getElementById("content").style.display="block";
+
+document.getElementById("content").scrollIntoView({
+behavior:"smooth"
+});
+
 }
 
-const noBtn = document.getElementById("noBtn");
+const noBtn=document.getElementById("noBtn");
 
 noBtn.addEventListener("mouseover",()=>{
 
-    const x = Math.random()*300-150;
-    const y = Math.random()*200-100;
+const x=Math.random()*300-150;
+const y=Math.random()*200-100;
 
-    noBtn.style.transform =
-    `translate(${x}px,${y}px)`;
+noBtn.style.transform=
+`translate(${x}px,${y}px)`;
 
 });
 
 function acceptDate(){
 
-    document.getElementById("result").innerHTML = `
-    <div class="card final">
+document.getElementById("result").innerHTML=
+`
+<div class="card final">
 
-        <h2>🥰 Yeay!</h2>
+<h2>🥰 Yeay!</h2>
 
-        <br>
+<br>
 
-        <p>
-        Aku senang sekali kamu menerima ajakanku ❤️
-        <br><br>
-        Terima kasih sudah menjadi bagian terindah dalam hidupku.
-        <br><br>
-        Sekarang tinggal kirim konfirmasi agar aku tahu kamu siap untuk kencan spesial kita.
-        </p>
+<p>
+Aku senang sekali kamu menerima ajakanku ❤️
+<br><br>
+Terima kasih sudah menjadi bagian terindah dalam hidupku.
+<br><br>
+Sekarang tinggal kirim konfirmasi agar aku tahu kamu siap untuk kencan spesial kita.
+</p>
 
-        <br>
+<br>
 
-        <button onclick="sendWhatsapp()" id="yesBtn">
-            💌 Kirim Konfirmasi Ayang
-        </button>
+<button onclick="sendWhatsapp()" id="yesBtn">
+💌 Kirim Konfirmasi ke Ayang ❤️
+</button>
 
-    </div>
-    `;
+</div>
+`;
 
-    createHearts();
+createHearts();
 
 }
 
 function sendWhatsapp(){
 
-    const pesan =
-    "Hai Sayangku ❤️%0A%0AAku, Dita, menerima ajakan kencanmu 🥰%0A%0AAku siap untuk hari spesial kita 💕%0A%0ATidak sabar menunggu hari itu 😘";
+const pesan =
+"Hai Fakhrur ❤️%0A%0AAku, Dita, menerima ajakan kencanmu 🥰%0A%0AAku siap untuk hari spesial kita 💕%0A%0ATidak sabar menunggu hari itu 😘";
 
-    window.open(
-    "https://wa.me/6285974891363?text=" + pesan,
-    "_blank"
-    );
+window.open(
+"https://wa.me/6285974891363?text="+pesan,
+"_blank"
+);
 
 }
 
 function createHearts(){
 
-    for(let i=0;i<50;i++){
+for(let i=0;i<50;i++){
 
-        const heart = document.createElement("div");
+const heart=document.createElement("div");
 
-        heart.className = "heart";
-        heart.innerHTML = "❤️";
+heart.className="heart";
 
-        heart.style.left =
-        Math.random()*100 + "vw";
+heart.innerHTML="❤️";
 
-        heart.style.animationDuration =
-        (2 + Math.random()*3) + "s";
+heart.style.left=Math.random()*100+"vw";
 
-        document.body.appendChild(heart);
+heart.style.animationDuration=
+(2+Math.random()*3)+"s";
 
-        setTimeout(()=>{
-            heart.remove();
-        },5000);
+document.body.appendChild(heart);
 
-    }
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+}
 
 }
 
 </script>
+
+</body>
+</html>
