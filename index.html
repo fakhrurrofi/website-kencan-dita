@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Dita ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#091524;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('foto.jpg');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+cursor:pointer;
+font-size:1rem;
+margin-top:25px;
+font-weight:bold;
+}
+
+.open-btn{
+background:#d4af37;
+}
+
+section{
+padding:80px 20px;
+display:none;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+text-align:center;
+}
+
+.card{
+background:#10233f;
+padding:30px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+height:350px;
+object-fit:cover;
+}
+
+.date-box{
+background:#10233f;
+padding:40px;
+border-radius:20px;
+margin-top:20px;
+}
+
+#yesBtn{
+background:#d4af37;
+color:#071426;
+}
+
+#noBtn{
+background:#ff4d6d;
+color:white;
+position:relative;
+}
+
+.final{
+font-size:1.3rem;
+line-height:2;
+}
+
+.heart{
+position:fixed;
+font-size:20px;
+animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-50px);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+
+<div>
+
+<h1>Untuk Dita ❤️</h1>
+
+<p>
+Aku punya sesuatu yang ingin kusampaikan...
+</p>
+
+<button class="open-btn" onclick="openStory()">
+Buka Rahasia 💌
+</button>
+
+</div>
+
+</div>
+
+<section id="content">
+
+<div class="container">
+
+<h2>Hai Dita 🌹</h2>
+
+<div class="card">
+
+<p>
+Terima kasih sudah menjadi bagian terindah dalam hidupku.
+Ada banyak hari yang sudah kita lewati bersama,
+dan aku berharap masih ada banyak hari indah lainnya yang akan kita ciptakan.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Kenangan Kita 📸</h2>
+
+<div class="gallery">
+
+<img src="foto.jpg">
+<img src="foto.jpg">
+<img src="foto.jpg">
+
+</div>
+
+</div>
+
+<div class="date-box">
+
+<h2>Ajakan Spesial ❤️</h2>
+
+<br>
+
+<p>
+Aku ingin mengajakmu untuk menghabiskan waktu bersamaku.
+Bukan karena ada acara besar,
+tetapi karena setiap momen bersamamu selalu terasa istimewa.
+</p>
+
+<br><br>
+
+<h3>📅 Sabtu Malam</h3>
+<h3>⏰ 19.00 WIB</h3>
+<h3>📍 Tempat Masih Rahasia 😘</h3>
+
+<br><br>
+
+<p>
+Maukah kamu pergi kencan denganku?
+</p>
+
+<br>
+
+<button id="yesBtn" onclick="acceptDate()">
+❤️ Ya, Aku Mau
+</button>
+
+<button id="noBtn">
+😅 Tidak
+</button>
+
+</div>
+
+<div id="result" style="margin-top:40px;"></div>
+
+</div>
+
+</section>
+
+<script>
+
+function openStory(){
+document.getElementById('content').style.display='block';
+document.getElementById('content').scrollIntoView({
+behavior:'smooth'
+});
+}
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",()=>{
+
+const x=Math.random()*300-150;
+const y=Math.random()*200-100;
+
+noBtn.style.transform=
+`translate(${x}px,${y}px)`;
+
+});
+
+function acceptDate(){
+
+document.getElementById("result").innerHTML=
+`
+<div class="card final">
+<h2>🥰 Yeay!</h2>
+<br>
+<p>
+Aku tidak sabar menunggu hari itu.
+Terima kasih sudah mau menerima ajakanku.
+Sampai bertemu di kencan kita ❤️
+</p>
+</div>
+`;
+
+for(let i=0;i<50;i++){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=
+(2+Math.random()*3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+}
+}
+
+</script>
+
+</body>
+</html>
