@@ -249,36 +249,35 @@ noBtn.style.transform=
 
 function acceptDate(){
 
-document.getElementById("result").innerHTML=
+document.getElementById("result").innerHTML =
 `
+
 <div class="card final">
 <h2>🥰 Yeay!</h2>
 <br>
 <p>
 Aku tidak sabar menunggu hari itu.
-Terima kasih sudah mau menerima ajakanku.
-Sampai bertemu di kencan kita ❤️
+Terima kasih sudah mau menerima ajakanku ❤️
 </p>
+<br>
+<button onclick="sendWhatsapp()" id="yesBtn">
+Kirim Konfirmasi ke Kakak 💌
+</button>
 </div>
 `;
 
-for(let i=0;i<50;i++){
-
-const heart=document.createElement("div");
-
-heart.className="heart";
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.animationDuration=
-(2+Math.random()*3)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},5000);
 }
+
+function sendWhatsapp(){
+
+const pesan =
+"Hai Sayang ❤️%0A%0AAku menerima ajakan kencanmu 🥰%0A%0AAku siap untuk kencan spesial kita.%0A%0ASampai bertemu 😘";
+
+window.open(
+"https://wa.me/6285974891363?text=" + pesan,
+"_blank"
+);
+
 }
 
 </script>
